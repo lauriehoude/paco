@@ -11,3 +11,4 @@ Projet vous êtes le héro
 
 **Palette de couleurs** :[Coolors.co](https://coolors.co/7d84b2-8e9dcc-d9dbf1-f9f9ed-dbf4a7)
 
+![Diagramme sans nom drawio (7)](https://user-images.githubusercontent.com/89647723/191823111-82d8325c-034b-43c5-889a-aa016781c60f.png)
