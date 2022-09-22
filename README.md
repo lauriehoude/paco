@@ -7,4 +7,4 @@ Projet vous êtes le héro
 
 **Genre** : Aventure, Action, Irréaliste
 
-[ Inspiration](https://www.animal-crossing.com/)
+**Inspiration** [ Animal Crossing](https://www.animal-crossing.com/)
