@@ -5,4 +5,4 @@ Projet vous êtes le héro
 
 [ Développement web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros)
 
-**Genre: Aventure, Action, Irréaliste** 
+**Genre** : Aventure, Action, Irréaliste
