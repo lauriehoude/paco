@@ -59,14 +59,14 @@ let chaptersObj = {
             subtitle: "Rivière",
             text: "Avec beaucoup de difficulté il arrive à traverser la rivière.",
             image: "OIP.jfif",
-            btns: {choix1: {choixText : "continuer", action : "goToChapter('riviere_marche')"},
+            btns: {choix1: {choixText : "continuer", action : "goToChapter('riviere_marche')"},},
         },
             
             riviere_marche: {
                 subtitle: " Forêt Valark ",
                 text: "Paco , marche, marche et marche ",
                 image: "OIP.jfif",
-                btns: {choix1: {choixText : "continuer", action : "goToChapter('foret_valark')"},
+                btns: {choix1: {choixText : "continuer", action : "goToChapter('foret_valark')"},},
             },
                 
 
@@ -125,7 +125,7 @@ let chaptersObj = {
             subtitle: " La fin de la mission",
             text: "Après des heures et des heures de recherches, il trouve le fameux diamant dans la grotte. Cependant celui-ci est protégé par Layla. étant donné que Paco n'a demander aucune aide elle le lui donne!",
             image: "OIP.jfif",
-            btns: {choix1: {choixText : "Recommencer", action : "goToChapter('recommencer')"},}}}}}
+            btns: {choix1: {choixText : "Recommencer", action : "goToChapter('recommencer')"},}}}
         
 
 
@@ -137,6 +137,5 @@ let chaptersObj = {
             console.log(chaptersObj[chapterName]["subtitle"]);
             console.log(chaptersObj[chapterName]["text"]);
             console.log(chaptersObj[chapterName]["image"]);
-            
         };
        
