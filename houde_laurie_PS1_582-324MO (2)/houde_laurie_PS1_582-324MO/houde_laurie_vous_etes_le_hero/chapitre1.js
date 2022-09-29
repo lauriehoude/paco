@@ -125,17 +125,16 @@ let chaptersObj = {
             subtitle: " La fin de la mission",
             text: "Après des heures et des heures de recherches, il trouve le fameux diamant dans la grotte. Cependant celui-ci est protégé par Layla. étant donné que Paco n'a demander aucune aide elle le lui donne!",
             image: "OIP.jfif",
-            btns: {choix1: {choixText : "Recommencer", action : "goToChapter('recommencer')"},},
+            btns: {choix1: {choixText : "Recommencer", action : "goToChapter('recommencer')"},}}}}}
+        
 
 
-
-        },},
 
     
 
 
         function goToChapter(chapterName){
-            onsole.log(chaptersObj[chapterName]["subtitle"]);
+            console.log(chaptersObj[chapterName]["subtitle"]);
             console.log(chaptersObj[chapterName]["text"]);
             console.log(chaptersObj[chapterName]["image"]);
             
