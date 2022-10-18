@@ -162,7 +162,7 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
 
-    document.querySelectorAll("titre").innerHTML = (chaptersObj[chapterName]["subtitle"]);
+    document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector("img").innerHTML = `<img src="${chaptersObj[chapterName]["image"]}" class="chat">`;
     let choix = document.querySelectorAll(".choix").innerHTML = chaptersObj[chapterName]["options"]["text"];
