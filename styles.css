@@ -1,3 +1,4 @@
+
     html {
         background-color: #93C9A8;
         margin: 0;
@@ -115,5 +116,11 @@
     }
     
     a:hover {
-        background-color: azure;
+        background-color: azure;    
+        html {
+        background-color: #93C9A8;
+        margin: 0;
+        overflow: hidden;
+        box-sizing: border-box;
     }
+    
