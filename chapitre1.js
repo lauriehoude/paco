@@ -161,18 +161,40 @@ let chaptersObj = {
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
-    console.log(chaptersObj[chapterName]["options"]);
+    console.log(chaptersObj[chapterName]["img"]);
 
+
+    document.querySelector(".bouton").innerHTML = "";
     document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
-    document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".chat").src = chaptersObj[chapterName]["img"];
-    let choix = document.querySelector("options")
+    document.querySelector(".chat").src = (chaptersObj[chapterName]["img"]);
+
+
+
+
+    for (i in chaptersObj[chapterName].options) {
+        const boutons = document.createElement("button")
+        boutons.setAttribute("class", "choix");
+        boutons.setAttribute("onclick", chaptersObj[chapterName].options[i].action);
+        const nde = document.createTextNode(chaptersObj[chapterName].options[i].text);
+        boutons.appendChild(nde);
+        const parent = document.querySelector(".bouton");
+        parent.appendChild(boutons);
+
+
+    }
+};
+
+function keyTrue() {
+    let keyFound = true;
+    goToChapter("finale");
+
 }
-for (let i = 0; i < chaptersObj[chapterName].options.length; i++) {
-    let opt = document.createElement("button");
-    opt.appendChild(document.createTextNode(chaptersObj[chapterName].options[i].text))
-    choix.appendChild(opt);
-    opt.setAttribute("type", "button");
-    opt.setAttribute("onclick", "action");
+
+function keyStatus() {
+    if (keyFound = true) {
+        goToChapter("finale")
+    } else {
+        goToChapter("recommencer");
+    }
 }
