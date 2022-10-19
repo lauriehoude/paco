@@ -137,7 +137,7 @@ let chaptersObj = {
 
     foret_valark: {
         subtitle: "Forêt Valark",
-        text: "Paco doit répondre à une question avant de terminer sa quête. Est ce que Paco a demandé de l'aide au courant de sa mission.",
+        text: "Paco doit répondre à une question avant de terminer sa quête. Est ce que Paco a demandé de l'aide au courant de sa mission?",
         image: "assets/forest_marche.jpg",
         options: [
             { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
@@ -163,13 +163,19 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["text"]);
 
     document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector("img").innerHTML = `<img src="${chaptersObj[chapterName]["image"]}" class="chat">`;
-    let choix = document.querySelectorAll(".choix").innerHTML = chaptersObj[chapterName]["options"]["text"];
+    document.querySelector(".chat").src = chaptersObj[chapterName]["img"];
+    let choix = document.querySelector("options")
 
 
 };
 
-for (let index = 0; index <= chaptersObj[chapterName].options.length; index++) {
+for (element of chaptersObj[chapterName]["options"]) {
+    let opt = document.createElement("button");
+    opt.appendChild(document.createTextNode(element["text"]));
+    choix.appendChild(opt);
+    opt.setAttribute("type", "button")
+    opt.setAttribute("onclick", "action");;
 
 }

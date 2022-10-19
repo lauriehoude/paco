@@ -21,77 +21,40 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
 }
 
 .game {
     width: 800px;
     height: 650px;
-    position: relative;
     background-color: #BBD9F0;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    min-width: 400px;
-    max-width: 900px;
-    min-height: 100px;
     border-radius: 10px;
     padding: 10px;
 }
 
-.contenu {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    position: relative;
-    height: 85%;
-    object-fit: contain;
-}
-
 .quete {
-    position: relative;
     height: 100%;
-    left: 27.5%;
     font-family: "midnight";
     text-align: center;
     width: 100vw;
-    text-align: center;
-    display: flex;
-    justify-content: center;
     letter-spacing: 0.15em;
 }
 
 .titre {
     position: relative;
-    height: 85%;
-    bottom: -20%;
-    right: 5%;
     font-family: "saucisse";
     text-align: center;
-    display: flex;
-    justify-content: center;
-    width: 50vw;
 }
 
 p {
     position: relative;
     font-family: "saucisse";
     text-align: center;
-    height: 60%;
-    bottom: -45%;
-    right: 33%;
-    width: 50%;
 }
 
 .chat {
     width: 50%;
     height: 60%;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-self: center;
-    position: relative;
-    bottom: 15%;
     background-color: aquamarine;
     border-radius: 10px;
 }
@@ -103,7 +66,6 @@ p {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    bottom: 9%;
 }
 
 a {
