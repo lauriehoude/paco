@@ -161,6 +161,7 @@ let chaptersObj = {
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
+    console.log(chaptersObj[chapterName]["options"]);
 
     document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];

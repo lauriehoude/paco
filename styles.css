@@ -7,12 +7,12 @@ html {
 
 @font-face {
     font-family: "midnight";
-    src: url("/css/midnight_8/Midnight.ttf") format("truetype")
+    src: url("/midnight_8/Midnight.ttf") format("truetype")
 }
 
 @font-face {
     font-family: "saucisse";
-    src: url("/css/homemade_sausage/Homemade\ Sausage.ttf") format("truetype")
+    src: url("/homemade_sausage/Homemade/Sausage.ttf") format("truetype")
 }
 
 body {
@@ -21,13 +21,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .game {
     width: 800px;
     height: 650px;
     background-color: #BBD9F0;
-    flex-direction: column;
     border-radius: 10px;
     padding: 10px;
 }
@@ -36,7 +36,6 @@ body {
     height: 100%;
     font-family: "midnight";
     text-align: center;
-    width: 100vw;
     letter-spacing: 0.15em;
 }
 
