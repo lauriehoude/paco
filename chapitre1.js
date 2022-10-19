@@ -171,5 +171,8 @@ function goToChapter(chapterName) {
 }
 for (let i = 0; i < chaptersObj[chapterName].options.length; i++) {
     let opt = document.createElement("button");
-    opt.appendChild(document.createTextNode(chaptersObj[chapterName].options[i].text) choix.appendChild(opt); opt.setAttribute("type", "button") opt.setAttribute("onclick", "action");
-    }
+    opt.appendChild(document.createTextNode(chaptersObj[chapterName].options[i].text))
+    choix.appendChild(opt);
+    opt.setAttribute("type", "button");
+    opt.setAttribute("onclick", "action");
+}
