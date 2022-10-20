@@ -123,7 +123,7 @@ let chaptersObj = {
     },
 
 
-    escalader_montage: {
+    escalader_montagne: {
         subtitle: "sommet de la montagne",
         text: "Il escade la montagne avec difficulter",
         image: "assets/mountain_escalader.webp",
@@ -141,7 +141,7 @@ let chaptersObj = {
         image: "assets/forest_marche.jpg",
         options: [
             { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
-            { text: " Non, il a été capanble de réussir cette quête par lui-même ", action: "goTopChapter('finale')" }
+            { text: " Non, il a été capable de réussir cette quête par lui-même ", action: "goTopChapter('finale')" }
 
         ]
 
@@ -161,13 +161,13 @@ let chaptersObj = {
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
-    console.log(chaptersObj[chapterName]["img"]);
+    console.log(chaptersObj[chapterName]["image"]);
 
 
-    document.querySelector(".bouton").innerHTML = "";
+    document.querySelector(".bouton").innerHTML = " ";
     document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".chat").src = (chaptersObj[chapterName]["img"]);
+    document.querySelector(".chat").src = (chaptersObj[chapterName]["image"]);
 
 
 
@@ -184,6 +184,7 @@ function goToChapter(chapterName) {
 
     }
 };
+let keyFound = false;
 
 function keyTrue() {
     let keyFound = true;
@@ -198,3 +199,4 @@ function keyStatus() {
         goToChapter("recommencer");
     }
 }
+goToChapter("introduction")
