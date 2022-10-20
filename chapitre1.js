@@ -27,7 +27,8 @@ let chaptersObj = {
         image: "assets/introduction1.jpg",
         options: [
             { text: "il sort de son lit", action: "goToChapter('sortir_dehors')" },
-            { text: "Il reste dans son lit", action: "goTopChapter('lit_recommencer')" }
+            { text: "Il reste dans son lit", action: "goToChapter('lit_recommencer')" },
+
         ]
 
     },
@@ -50,7 +51,7 @@ let chaptersObj = {
         text: "Quel chemin Paco devrait-il prendre?",
         image: "assets/forest_2.jpg",
         options: [{ text: "chemin gauche", action: "goToChapter('chemin_gauche_riviere')" },
-            { text: "chemin droit", action: "goTopChapter('chemin_droit_montagne')" }
+            { text: "chemin droit", action: "goToChapter('chemin_droit_montagne')" }
         ]
 
 
@@ -63,7 +64,7 @@ let chaptersObj = {
         image: "assets/chemin_riviere_2.png",
         options: [
             { text: " Essayer de nager", action: "goToChapter('nager')" },
-            { text: "Trouver des matériaux", action: "goTopChapter('riviere_materiaux')" }
+            { text: "Trouver des matériaux", action: "goToChapter('riviere_materiaux')" }
         ]
 
 
@@ -94,7 +95,7 @@ let chaptersObj = {
         image: "assets/montagne2.jfif",
         options: [
             { text: " Accepter son aide ", action: "goToChapter('prendre_potion')" },
-            { text: " Refuser son aide ", action: "goTopChapter('escalader_montagne')" }
+            { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
         ]
 
 
@@ -106,7 +107,7 @@ let chaptersObj = {
         image: "assets/sorciere.jpg",
         options: [
             { text: " Accepter son aide ", action: "goToChapter('prendre_potion_recommencer')" },
-            { text: " Refuser son aide ", action: "goTopChapter('escalader_montagne')" }
+            { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
         ]
 
 
@@ -142,7 +143,7 @@ let chaptersObj = {
         image: "assets/forest_valark.jpg",
         options: [
             { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
-            { text: " Non, il a été capable de réussir cette quête par lui-même ", action: "goTopChapter('finale')" }
+            { text: " Non, il a été capable de réussir cette quête par lui-même ", action: "goToChapter('finale')" }
 
         ]
 
@@ -168,7 +169,7 @@ function goToChapter(chapterName) {
     document.querySelector(".bouton").innerHTML = " ";
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".chat").src = (chaptersObj[chapterName]["image"]);
+    document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
 
 
 
