@@ -12,7 +12,7 @@ let chaptersObj = {
 
     introduction: {
         subtitle: "introduction",
-        text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark",
+        text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark.",
         image: "assets/OIP.jfif",
         options: [
             { text: 'continuer', action: "goToChapter('introduction1')" }
@@ -72,7 +72,7 @@ let chaptersObj = {
     },
     nager: {
         subtitle: "Rivière",
-        text: "Avec beaucoup de difficulté il arrive à traverser la rivière.",
+        text: "Avec beaucoup de difficulté, il arrive à traverser la rivière.",
         image: "assets/chemin_riviere_2.png",
         options: [
             { text: "continuer", action: "goToChapter('riviere_materiaux')" }
@@ -81,7 +81,7 @@ let chaptersObj = {
 
     riviere_materiaux: {
         subtitle: " Forêt Valark ",
-        text: "Paco , marche, marche et marche ",
+        text: "Paco marche, marche et marche ",
         image: "assets/chemin_riviere_2.png",
         options: [
             { text: "continuer", action: "goToChapter('foret_valark')" }
@@ -91,20 +91,8 @@ let chaptersObj = {
 
     chemin_droit_montagne: {
         subtitle: "Montagne",
-        text: "Paco se retrouve face à une énorme montagne. Il doit trouvé une manière de la monter. Lors de sa recherche, il fait la connaissance de Layla, une jeune sorcière de la montagne.",
+        text: "Paco se retrouve face à une énorme montagne. Il doit trouvé une manière de la monter. Lors de sa recherche, il fait la connaissance de Layla, une jeune sorcière de la montagne. Elle lui propose son aide aide",
         image: "assets/montagne2.jfif",
-        options: [
-            { text: " Accepter son aide ", action: "goToChapter('prendre_potion')" },
-            { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
-        ]
-
-
-    },
-
-    prendre_potion: {
-        subtitle: "Potion",
-        text: " Elle lui suggère de prendre une potion qui augmenterait son endurance et sa vitesse.",
-        image: "assets/sorciere.jpg",
         options: [
             { text: " Accepter son aide ", action: "goToChapter('prendre_potion_recommencer')" },
             { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
@@ -112,6 +100,7 @@ let chaptersObj = {
 
 
     },
+
 
 
     prendre_potion_recommencer: {
@@ -127,7 +116,7 @@ let chaptersObj = {
 
     escalader_montagne: {
         subtitle: "sommet de la montagne",
-        text: "Il escade la montagne avec difficulter",
+        text: "Il escade la montagne avec difficulté",
         image: "assets/mountain_escalader.webp",
         options: [
             { text: "continuer", action: "goToChapter('foret_valark')" }
@@ -139,7 +128,7 @@ let chaptersObj = {
 
     foret_valark: {
         subtitle: "Forêt Valark",
-        text: "Paco doit répondre à une question avant de terminer sa quête. Est ce que Paco a demandé de l'aide au courant de sa mission?",
+        text: "Paco doit répondre à une question avant de terminer sa quête. Est-ce que Paco a demandé de l'aide au courant de sa mission?",
         image: "assets/forest_valark.jpg",
         options: [
             { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
@@ -187,9 +176,10 @@ function goToChapter(chapterName) {
     }
 };
 let keyFound = false;
+let aideDemande = false;
 
 function keyTrue() {
-    let keyFound = true;
+    keyFound = true;
     goToChapter("Chemin_droit_montagne");
 
 }
@@ -201,4 +191,11 @@ function keyStatus() {
         goToChapter("Prendre_potion_recommencer");
     }
 }
+
+function aideTrue() {
+    aideDemande = true;
+    goToChapter("recommencer")
+
+}
+
 goToChapter("introduction")
