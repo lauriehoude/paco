@@ -22,6 +22,7 @@ let chaptersObj = {
     },
 
     introduction1: {
+        subtitle: "Aventure",
         text: "est ce qu'il devrait sortir de son lit et se mettre à sa recherche?",
         image: "assets/introduction1.jpg",
         options: [
@@ -35,7 +36,7 @@ let chaptersObj = {
 
 
     lit_recommencer: {
-        subtitle: "Dormir_recommencer",
+        subtitle: "Dormir recommencer",
         text: "Paco prefere dormir que de partir à l'aventure",
         image: "assets/cat_sleep.jpg",
         options: [
@@ -59,7 +60,7 @@ let chaptersObj = {
     chemin_gauche_riviere: {
         subtitle: "Rivière",
         text: "Paco se retrouve devant une rivière mais, malheureusement, Paco ne sait pas comment nager.",
-        image: "assets/chemin_riviere.webp",
+        image: "assets/chemin_riviere_2.png",
         options: [
             { text: " Essayer de nager", action: "goToChapter('nager')" },
             { text: "Trouver des matériaux", action: "goTopChapter('riviere_materiaux')" }
@@ -71,16 +72,16 @@ let chaptersObj = {
     nager: {
         subtitle: "Rivière",
         text: "Avec beaucoup de difficulté il arrive à traverser la rivière.",
-        image: "assets/chemin_riviere2.png",
+        image: "assets/chemin_riviere_2.png",
         options: [
-            { text: "continuer", action: "goToChapter('riviere_marche')" }
+            { text: "continuer", action: "goToChapter('riviere_materiaux')" }
         ]
     },
 
     riviere_materiaux: {
         subtitle: " Forêt Valark ",
         text: "Paco , marche, marche et marche ",
-        image: "assets/mountain_escalader.webp",
+        image: "assets/chemin_riviere_2.png",
         options: [
             { text: "continuer", action: "goToChapter('foret_valark')" }
         ]
@@ -138,7 +139,7 @@ let chaptersObj = {
     foret_valark: {
         subtitle: "Forêt Valark",
         text: "Paco doit répondre à une question avant de terminer sa quête. Est ce que Paco a demandé de l'aide au courant de sa mission?",
-        image: "assets/forest_marche.jpg",
+        image: "assets/forest_valark.jpg",
         options: [
             { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
             { text: " Non, il a été capable de réussir cette quête par lui-même ", action: "goTopChapter('finale')" }
@@ -165,7 +166,7 @@ function goToChapter(chapterName) {
 
 
     document.querySelector(".bouton").innerHTML = " ";
-    document.querySelector(".titre").innerHTML = chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".chat").src = (chaptersObj[chapterName]["image"]);
 
@@ -188,15 +189,15 @@ let keyFound = false;
 
 function keyTrue() {
     let keyFound = true;
-    goToChapter("finale");
+    goToChapter("Chemin_droit_montagne");
 
 }
 
 function keyStatus() {
-    if (keyFound = true) {
+    if (keyFound == true) {
         goToChapter("finale")
     } else {
-        goToChapter("recommencer");
+        goToChapter("Prendre_potion_recommencer");
     }
 }
 goToChapter("introduction")
