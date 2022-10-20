@@ -12,7 +12,7 @@ let chaptersObj = {
 
     introduction: {
         subtitle: "introduction",
-        text: "Paco (chat roux)a entendu parler de la légende du trésor caché dans la forêt Valark et souhaite vraiment le trouver",
+        text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark",
         image: "assets/OIP.jfif",
         options: [
             { text: 'continuer', action: "goToChapter('introduction1')" }
