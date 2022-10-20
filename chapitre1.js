@@ -94,18 +94,16 @@ let chaptersObj = {
         text: "Paco se retrouve face à une énorme montagne. Il doit trouvé une manière de la monter. Lors de sa recherche, il fait la connaissance de Layla, une jeune sorcière de la montagne. Elle lui propose son aide aide",
         image: "assets/montagne2.jfif",
         options: [
-            { text: " Accepter son aide ", action: "goToChapter('prendre_potion_recommencer')" },
+            { text: " Accepter son aide ", action: "aideTrue()" },
             { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
         ]
-
-
     },
 
 
 
     prendre_potion_recommencer: {
         subtitle: " Potion recommencer",
-        text: " Vous avez pris la décision d'accepter de l'aide, Vous devez recommencer. En prennant cette potion il commence à se sentir bizzare et tombe dans les pommes. Il a oublié qu'il faut jamais faire confiance aux sorcières des montagnes",
+        text: " Vous avez pris la décision d'accepter de l'aide ce qui vous fait échouer la quête. Vous devez recommencer. <br/> En prennant cette potion il commence à se sentir bizzare et tombe dans les pommes. Il a oublié qu'il faut jamais faire confiance aux sorcières des montagnes",
         image: "assets/potion.jpg",
         options: [{ text: " recommencer ", action: "goToChapter('recommencer')" }]
 
@@ -116,35 +114,22 @@ let chaptersObj = {
 
     escalader_montagne: {
         subtitle: "sommet de la montagne",
-        text: "Il escade la montagne avec difficulté",
+        text: "Il escade la montagne.",
         image: "assets/mountain_escalader.webp",
         options: [
-            { text: "continuer", action: "goToChapter('foret_valark')" }
+            { text: "continuer", action: "aideStatus()" }
         ]
 
 
     },
 
-
-    foret_valark: {
-        subtitle: "Forêt Valark",
-        text: "Paco doit répondre à une question avant de terminer sa quête. Est-ce que Paco a demandé de l'aide au courant de sa mission?",
-        image: "assets/forest_valark.jpg",
-        options: [
-            { text: " Oui, il a demandé de l'aide ", action: "goToChapter('recommencer')" },
-            { text: " Non, il a été capable de réussir cette quête par lui-même ", action: "goToChapter('finale')" }
-
-        ]
-
-
-    },
 
     finale: {
         subtitle: " La fin de la mission",
         text: "Après des heures et des heures de recherches, il trouve le fameux diamant dans la grotte. Cependant celui-ci est protégé par Layla. étant donné que Paco n'a demander aucune aide elle le lui donne!",
         image: "assets/forest_valark.jpg",
         options: [
-            { text: "Recommencer", action: "goToChapter('recommencer')" }
+            { text: "Recommencer", action: "goToChapter('introduction')" }
         ]
     }
 };
@@ -188,14 +173,21 @@ function keyStatus() {
     if (keyFound == true) {
         goToChapter("finale")
     } else {
-        goToChapter("Prendre_potion_recommencer");
+        goToChapter("prendre_potion_recommencer");
     }
 }
 
 function aideTrue() {
     aideDemande = true;
-    goToChapter("recommencer")
+    goToChapter("escalader_montagne")
+}
 
+function aideStatus() {
+    if (aideDemande == true) {
+        goToChapter("prendre_potion_recommencer");
+    } else {
+        goToChapter("finale")
+    }
 }
 
 goToChapter("introduction")
