@@ -77,7 +77,7 @@ let chaptersObj = {
         ]
     },
 
-    riviere_marche: {
+    riviere_materiaux: {
         subtitle: " Forêt Valark ",
         text: "Paco , marche, marche et marche ",
         image: "assets/mountain_escalader.webp",
@@ -101,7 +101,7 @@ let chaptersObj = {
 
     prendre_potion: {
         subtitle: "Potion",
-        text: " Elle lui suggère de prendre une potion qui augmenterais son endurance et sa vitesse.",
+        text: " Elle lui suggère de prendre une potion qui augmenterait son endurance et sa vitesse.",
         image: "assets/sorciere.jpg",
         options: [
             { text: " Accepter son aide ", action: "goToChapter('prendre_potion_recommencer')" },
