@@ -144,6 +144,8 @@ function goToChapter(chapterName) {
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
+    let images = `<img src="${chaptersObj[chapterName].image}">`;
+
 
 
 
@@ -156,6 +158,15 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
+        if (chaptersObj.contains("video")) {;
+            images.innerHTML = video.src = `assets/videoplayback.mp4`;
+        } else {
+            element.src = `assets/OIP.jfif`;
+        }
+
+
+
+
 
 
     }

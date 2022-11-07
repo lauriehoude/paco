@@ -52,18 +52,6 @@ p {
     text-align: center;
 }
 
-img {
-    margin: 0px auto;
-    display: block;
-    min-width: 50%;
-    min-height: 60%;
-    background-color: aquamarine;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 51%;
-    max-height: 61%;
-}
-
 .bouton {
     display: inline-flex;
     width: 100%;
@@ -77,4 +65,16 @@ a {
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 10px;
+}
+
+video {
+    margin: 0px auto;
+    display: block;
+    min-width: 50%;
+    min-height: 60%;
+    background-color: aquamarine;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 51%;
+    max-height: 61%;
 }
