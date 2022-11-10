@@ -145,7 +145,7 @@ function goToChapter(chapterName) {
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
     let images = `<img src="${chaptersObj[chapterName].image}">`;
-
+    let video2 = document.querySelector(".video1 video");
 
 
 
@@ -158,10 +158,10 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
-        if (chaptersObj.contains("video")) {;
-            images.innerHTML = video.src = `assets/videoplayback.mp4`;
+        if (chaptersObj.contains("video")) {
+            images.innerHTML.src = `assets/videoplayback.mp4`;
         } else {
-            element.src = `assets/OIP.jfif`;
+            images.src = `assets/OIP.jfif`;
         }
 
 
