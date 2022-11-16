@@ -1,25 +1,17 @@
 let chaptersObj = {
-
     recommencer: {
         subtitle: "Recommencer",
         text: " Vous avez pris la mauvaise décision, vous devez recommencer.",
         image: "assets/photo.jpg",
-        options: [
-            { text: "Recommencer!", action: "goToChapter('introduction')" }
-        ]
+        options: [{ text: "Recommencer!", action: "goToChapter('introduction')" }]
     },
-
 
     introduction: {
         subtitle: "introduction",
         text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark.",
         image: "assets/OIP.jfif",
         videos: "assets/videoplayback.mp4",
-        options: [
-            { text: 'continuer', action: "goToChapter('introduction1')" }
-
-        ]
-
+        options: [{ text: "continuer", action: "goToChapter('introduction1')" }]
     },
 
     introduction1: {
@@ -28,35 +20,28 @@ let chaptersObj = {
         image: "assets/introduction1.jpg",
         options: [
             { text: "il sort de son lit", action: "goToChapter('sortir_dehors')" },
-            { text: "Il reste dans son lit", action: "goToChapter('lit_recommencer')" },
-
+            {
+                text: "Il reste dans son lit",
+                action: "goToChapter('lit_recommencer')"
+            }
         ]
-
     },
-
-
-
 
     lit_recommencer: {
         subtitle: "Dormir recommencer",
         text: "Paco prefere dormir que de partir à l'aventure",
         image: "assets/cat_sleep.jpg",
-        options: [
-            { text: "dormir", action: "goToChapter('recommencer')" }
-
-        ]
+        options: [{ text: "dormir", action: "goToChapter('recommencer')" }]
     },
 
     sortir_dehors: {
         subtitle: "Chemin",
         text: "Quel chemin Paco devrait-il prendre?",
         image: "assets/forest_2.jpg",
-        options: [{ text: "chemin gauche", action: "goToChapter('chemin_gauche_riviere')" },
+        options: [
+            { text: "chemin gauche", action: "goToChapter('chemin_gauche_riviere')" },
             { text: "chemin droit", action: "goToChapter('chemin_droit_montagne')" }
         ]
-
-
-
     },
 
     chemin_gauche_riviere: {
@@ -65,30 +50,25 @@ let chaptersObj = {
         image: "assets/chemin_riviere_2.png",
         options: [
             { text: " Essayer de nager", action: "goToChapter('nager')" },
-            { text: "Trouver des matériaux", action: "goToChapter('riviere_materiaux')" }
+            {
+                text: "Trouver des matériaux",
+                action: "goToChapter('riviere_materiaux')"
+            }
         ]
-
-
-
     },
     nager: {
         subtitle: "Rivière",
         text: "Avec beaucoup de difficulté, il arrive à traverser la rivière.",
         image: "assets/chemin_riviere_2.png",
-        options: [
-            { text: "continuer", action: "goToChapter('riviere_materiaux')" }
-        ]
+        options: [{ text: "continuer", action: "goToChapter('riviere_materiaux')" }]
     },
 
     riviere_materiaux: {
         subtitle: " Forêt Valark ",
         text: "Paco marche, marche et marche ",
         image: "assets/chemin_riviere_2.png",
-        options: [
-            { text: "continuer", action: "goToChapter('foret_valark')" }
-        ]
+        options: [{ text: "continuer", action: "goToChapter('foret_valark')" }]
     },
-
 
     chemin_droit_montagne: {
         subtitle: "Montagne",
@@ -96,103 +76,95 @@ let chaptersObj = {
         image: "assets/montagne2.jfif",
         options: [
             { text: " Accepter son aide ", action: "aideTrue()" },
-            { text: " Refuser son aide ", action: "goToChapter('escalader_montagne')" }
+            {
+                text: " Refuser son aide ",
+                action: "goToChapter('escalader_montagne')"
+            }
         ]
     },
-
-
 
     prendre_potion_recommencer: {
         subtitle: " Potion recommencer",
         text: " Vous avez pris la décision d'accepter de l'aide ce qui vous fait échouer la quête. Vous devez recommencer. <br/> En prennant cette potion il commence à se sentir bizzare et tombe dans les pommes. Il a oublié qu'il faut jamais faire confiance aux sorcières des montagnes",
         image: "assets/potion.jpg",
         options: [{ text: " recommencer ", action: "goToChapter('recommencer')" }]
-
-
-
     },
-
 
     escalader_montagne: {
         subtitle: "sommet de la montagne",
         text: "Il escade la montagne.",
         image: "assets/mountain_escalader.webp",
-        options: [
-            { text: "continuer", action: "aideStatus()" }
-        ],
-        videos: 'assets/videoplayback.mp4'
-
-
-
+        options: [{ text: "continuer", action: "aideStatus()" }],
+        videos: "assets/videoplayback.mp4"
     },
-
 
     finale: {
         subtitle: " La fin de la mission",
         text: "Après des heures et des heures de recherches, il trouve le fameux diamant dans la grotte. Cependant celui-ci est protégé par Layla. étant donné que Paco n'a demander aucune aide elle le lui donne!",
         image: "assets/forest_valark.jpg",
-        options: [
-            { text: "Recommencer", action: "goToChapter('introduction')" }
-        ]
+        options: [{ text: "Recommencer", action: "goToChapter('introduction')" }]
     }
 };
 
 function goToChapter(chapterName) {
-    console.log(chaptersObj[chapterName]['subtitle']);
+    console.log(chaptersObj[chapterName]["subtitle"]);
     console.log(chaptersObj[chapterName]["text"]);
     console.log(chaptersObj[chapterName]["image"]);
     console.log(chaptersObj[chapterName]["videos"]);
 
-
     document.querySelector(".bouton").innerHTML = " ";
-    document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".quete").innerHTML =
+        chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
+    document.querySelector(
+        ".photos"
+    ).innerHTML = `<img src="${chaptersObj[chapterName].image}">`;
     let images = `<img src="${chaptersObj[chapterName]["image"]}">`;
-    let video = `<video src="${chaptersObj[chapterName]["videos"]}">`;
+    let video1 = `<video src="${chaptersObj[chapterName]["videos"]}">`;
 
     if (chaptersObj[chapterName]["video"]) {
-        document.querySelector(".image").innerHTML = < video src = "${chaptersObj[chapterName]['video']}"
-        class = "mp4"
-        autoplay loop muted > < /video>;
+        document.querySelector(".image").innerHTML = ( <
+            video src = "${chaptersObj[chapterName]['video']}"
+            class = "photos"
+            autoplay loop muted >
+
+            <
+            /video>
+        );
     } else {
-        document.querySelector(".image").innerHTML = < img src = "${chaptersObj[chapterName]['img']}"
-        class = "photo" > < /img>;
+        document.querySelector(".image").innerHTML = ( <
+            img src = "${chaptersObj[chapterName]['img']}"
+            class = "photos" >
+
+            <
+            /img>
+        );
     }
 
-
     for (i in chaptersObj[chapterName].options) {
-        const boutons = document.createElement("button")
+        const boutons = document.createElement("button");
         boutons.setAttribute("class", "choix");
         boutons.setAttribute("onclick", chaptersObj[chapterName].options[i].action);
-        const nde = document.createTextNode(chaptersObj[chapterName].options[i].text);
+        const nde = document.createTextNode(
+            chaptersObj[chapterName].options[i].text
+        );
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
         localStorage.setItem("user", "chapterObj");
-
-
-
-
-
-
-
     }
-
-
-};
+}
 let keyFound = false;
 let aideDemande = false;
 
 function keyTrue() {
     keyFound = true;
     goToChapter("Chemin_droit_montagne");
-
 }
 
 function keyStatus() {
     if (keyFound == true) {
-        goToChapter("finale")
+        goToChapter("finale");
     } else {
         goToChapter("prendre_potion_recommencer");
     }
@@ -200,15 +172,15 @@ function keyStatus() {
 
 function aideTrue() {
     aideDemande = true;
-    goToChapter("escalader_montagne")
+    goToChapter("escalader_montagne");
 }
 
 function aideStatus() {
     if (aideDemande == true) {
         goToChapter("prendre_potion_recommencer");
     } else {
-        goToChapter("finale")
+        goToChapter("finale");
     }
 }
 
-goToChapter("introduction")
+goToChapter("introduction");
