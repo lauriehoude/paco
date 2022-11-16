@@ -118,7 +118,9 @@ let chaptersObj = {
         image: "assets/mountain_escalader.webp",
         options: [
             { text: "continuer", action: "aideStatus()" }
-        ]
+        ],
+        video: 'assets/videoplayback.mp4'
+
 
 
     },
@@ -145,9 +147,13 @@ function goToChapter(chapterName) {
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
     let images = `<img src="${chaptersObj[chapterName].image}">`;
-    let video2 = document.querySelector(".video1 video");
+    let videos = `<video src="${chaptersObj[chapterName].video}">`;
 
-
+    if (videos != null) {
+        videos.innerHTML.src = `assets/videoplayback.mp4`;
+    } else {
+        images.src = `assets/OIP.jfif`;
+    }
 
 
     for (i in chaptersObj[chapterName].options) {
@@ -158,11 +164,7 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
-        if (chaptersObj.contains("video")) {
-            images.innerHTML.src = `assets/videoplayback.mp4`;
-        } else {
-            images.src = `assets/OIP.jfif`;
-        }
+
 
 
 
