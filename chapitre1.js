@@ -14,6 +14,7 @@ let chaptersObj = {
         subtitle: "introduction",
         text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark.",
         image: "assets/OIP.jfif",
+        videos: "assets/videoplayback.mp4",
         options: [
             { text: 'continuer', action: "goToChapter('introduction1')" }
 
@@ -119,7 +120,7 @@ let chaptersObj = {
         options: [
             { text: "continuer", action: "aideStatus()" }
         ],
-        video: 'assets/videoplayback.mp4'
+        videos: 'assets/videoplayback.mp4'
 
 
 
@@ -140,19 +141,23 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]['subtitle']);
     console.log(chaptersObj[chapterName]["text"]);
     console.log(chaptersObj[chapterName]["image"]);
+    console.log(chaptersObj[chapterName]["videos"]);
 
 
     document.querySelector(".bouton").innerHTML = " ";
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`
-    let images = `<img src="${chaptersObj[chapterName].image}">`;
-    let videos = `<video src="${chaptersObj[chapterName].video}">`;
+    let images = `<img src="${chaptersObj[chapterName]["image"]}">`;
+    let video = `<video src="${chaptersObj[chapterName]["videos"]}">`;
 
-    if (videos != null) {
-        videos.innerHTML.src = `assets/videoplayback.mp4`;
+    if (chaptersObj[chapterName]["video"]) {
+        document.querySelector(".image").innerHTML = < video src = "${chaptersObj[chapterName]['video']}"
+        class = "mp4"
+        autoplay loop muted > < /video>;
     } else {
-        images.src = `assets/OIP.jfif`;
+        document.querySelector(".image").innerHTML = < img src = "${chaptersObj[chapterName]['img']}"
+        class = "photo" > < /img>;
     }
 
 
@@ -164,6 +169,7 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
+        localStorage.setItem("user", "chapterObj");
 
 
 
@@ -172,6 +178,8 @@ function goToChapter(chapterName) {
 
 
     }
+
+
 };
 let keyFound = false;
 let aideDemande = false;
