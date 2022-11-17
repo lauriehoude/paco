@@ -69,7 +69,7 @@ let chaptersObj = {
         subtitle: " Forêt Valark ",
         text: "Paco marche, marche et marche ",
         image: "assets/chemin_riviere_2.png",
-        options: [{ text: "continuer", action: "goToChapter('foret_valark')" }]
+        options: [{ text: "continuer", action: "goToChapter('finale')" }]
     },
 
     chemin_droit_montagne: {
@@ -137,22 +137,19 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
-        localStorage.setItem("chapter", "chapterName");
-        localStorage.setItem("VarName", "chapterName");
-    }
-    // if (localStorage.getItem("VarName") == "true") {
-
-    //} else {
-    //  goToChapter("introduction");
-    //}
 
 
+
+
+    };
+    localStorage.setItem("chapter", [chapterName]);
 }
 let keyFound = false;
 let aideDemande = false;
 
 function keyTrue() {
-    keyFound = true;
+    localStorage.setItem("key", true)
+    keyFound = Boolean("key");
     goToChapter("Chemin_droit_montagne");
 }
 
@@ -165,7 +162,8 @@ function keyStatus() {
 }
 
 function aideTrue() {
-    aideDemande = true;
+    localStorage.setItem("aide", true)
+    aideDemande = Boolean("aide");
     goToChapter("escalader_montagne");
 }
 
@@ -177,15 +175,20 @@ function aideStatus() {
     }
 }
 
-goToChapter("introduction");
-
 
 
 let lovebomb = new Audio("assets/lovebomb.mp3")
 lovebomb.volume = 0.6;
 lovebomb.play()
 
+let chapitreLog = localStorage.getItem("chapter");
+
 function startGame() {
-    goToChapter("introduction")
+    goToChapter("introduction");
+    if (chapitreLog !== "introduction") {
+        goToChapter(chapitreLog);
+    } else {
+        goToChapter("introduction");
+    }
 }
 startGame()
