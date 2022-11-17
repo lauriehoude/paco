@@ -10,7 +10,7 @@ let chaptersObj = {
         subtitle: "introduction",
         text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark.",
         image: "assets/OIP.jfif",
-        video: "videoplayback.mp4",
+        video: "assets/videoplayback.mp4",
         options: [{ text: "continuer", action: "goToChapter('introduction1')" }]
     },
 
@@ -24,6 +24,7 @@ let chaptersObj = {
                 text: "Il reste dans son lit",
                 action: "goToChapter('lit_recommencer')"
             }
+
         ]
     },
 
@@ -63,6 +64,7 @@ let chaptersObj = {
         options: [{ text: "continuer", action: "goToChapter('riviere_materiaux')" }]
     },
 
+
     riviere_materiaux: {
         subtitle: " Forêt Valark ",
         text: "Paco marche, marche et marche ",
@@ -95,7 +97,7 @@ let chaptersObj = {
         text: "Il escade la montagne.",
         image: "assets/mountain_escalader.webp",
         options: [{ text: "continuer", action: "aideStatus()" }],
-        video: "videoplayback.mp4"
+        video: "assets/chat.mp4"
     },
 
     finale: {
@@ -117,11 +119,7 @@ function goToChapter(chapterName) {
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
 
     if (chaptersObj[chapterName]["video"]) {
-        document.querySelector(".photos").innerHTML = `<video src = assets/ "${chaptersObj[chapterName]['video']}"
-            
-            autoplay loop muted >
-
-            </video>`;
+        document.querySelector(".photos").innerHTML = `<video src="${chaptersObj[chapterName]['video']}" autoplay loop muted ></video>`;
     } else {
         document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`;
     }
@@ -142,11 +140,11 @@ function goToChapter(chapterName) {
         localStorage.setItem("chapter", "chapterName");
         localStorage.setItem("VarName", "chapterName");
     }
-    if (localStorage.getItem("VarName") == "true") {
+    // if (localStorage.getItem("VarName") == "true") {
 
-    } else {
-        goToChapter("introduction");
-    }
+    //} else {
+    //  goToChapter("introduction");
+    //}
 
 
 }
