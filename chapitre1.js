@@ -179,6 +179,12 @@ function aideStatus() {
 
 goToChapter("introduction");
 
+
+
+let lovebomb = new Audio("assets/lovebomb.mp3")
+lovebomb.volume = 0.6;
+lovebomb.play()
+
 function startGame() {
     goToChapter("introduction")
 }
