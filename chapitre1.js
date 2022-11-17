@@ -10,7 +10,7 @@ let chaptersObj = {
         subtitle: "introduction",
         text: "Paco le petit chat roux a entendu parlé d'un trésor caché celui de la forêt Valark.",
         image: "assets/OIP.jfif",
-        videos: "assets/videoplayback.mp4",
+        video: "videoplayback.mp4",
         options: [{ text: "continuer", action: "goToChapter('introduction1')" }]
     },
 
@@ -95,7 +95,7 @@ let chaptersObj = {
         text: "Il escade la montagne.",
         image: "assets/mountain_escalader.webp",
         options: [{ text: "continuer", action: "aideStatus()" }],
-        videos: "assets/videoplayback.mp4"
+        video: "videoplayback.mp4"
     },
 
     finale: {
@@ -113,33 +113,21 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["videos"]);
 
     document.querySelector(".bouton").innerHTML = " ";
-    document.querySelector(".quete").innerHTML =
-        chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(
-        ".photos"
-    ).innerHTML = `<img src="${chaptersObj[chapterName].image}">`;
-    let images = `<img src="${chaptersObj[chapterName]["image"]}">`;
-    let video1 = `<video src="${chaptersObj[chapterName]["videos"]}">`;
 
     if (chaptersObj[chapterName]["video"]) {
-        document.querySelector(".image").innerHTML = ( <
-            video src = "${chaptersObj[chapterName]['video']}"
-            class = "photos"
+        document.querySelector(".photos").innerHTML = `<video src = assets/ "${chaptersObj[chapterName]['video']}"
+            
             autoplay loop muted >
 
-            <
-            /video>
-        );
+            </video>`;
     } else {
-        document.querySelector(".image").innerHTML = ( <
-            img src = "${chaptersObj[chapterName]['img']}"
-            class = "photos" >
-
-            <
-            /img>
-        );
+        document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`;
     }
+
+
+
 
     for (i in chaptersObj[chapterName].options) {
         const boutons = document.createElement("button");
@@ -151,8 +139,16 @@ function goToChapter(chapterName) {
         boutons.appendChild(nde);
         const parent = document.querySelector(".bouton");
         parent.appendChild(boutons);
-        localStorage.setItem("user", "chapterObj");
+        localStorage.setItem("chapter", "chapterName");
+        localStorage.setItem("VarName", "chapterName");
     }
+    if (localStorage.getItem("VarName") == "true") {
+
+    } else {
+        goToChapter("introduction");
+    }
+
+
 }
 let keyFound = false;
 let aideDemande = false;
@@ -184,3 +180,8 @@ function aideStatus() {
 }
 
 goToChapter("introduction");
+
+function startGame() {
+    goToChapter("introduction")
+}
+startGame()
