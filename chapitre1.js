@@ -208,14 +208,12 @@ startGame()
 let efface = document.querySelector(".effacer")
 efface.addEventListener("click", function() {
 
+    function reset() {
+        localStorage.clear();
+        keyStatus = false;
+        aideTrue = false;
+        aideStatus = false;
 
+    }
+    reset();
 })
-
-function reset() {
-    localStorage.clear();
-    keyStatus = false;
-    aideTrue = false;
-    aideStatus = false;
-
-}
-reset();
