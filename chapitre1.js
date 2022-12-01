@@ -107,6 +107,7 @@ let chaptersObj = {
         options: [{ text: "Recommencer", action: "goToChapter('introduction')" }]
     }
 };
+let musique = lovebomb.play();
 
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["subtitle"]);
@@ -117,6 +118,7 @@ function goToChapter(chapterName) {
     document.querySelector(".bouton").innerHTML = " ";
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".texte").innerHTML = chaptersObj[chapterName]["text"];
+
 
     if (chaptersObj[chapterName]["video"]) {
         document.querySelector(".photos").innerHTML = `<video src="${chaptersObj[chapterName]['video']}" autoplay loop muted ></video>`;
@@ -143,6 +145,18 @@ function goToChapter(chapterName) {
 
     };
     localStorage.setItem("chapter", [chapterName]);
+    let input = document.querySelector('[type="checkbox"]');
+    let inputOui = input.checked;
+    if (inputOui == true) {
+        let lovebomb = new Audio("assets/lovebomb.mp3")
+        lovebomb.currentTime = 0;
+        lovebomb.play()
+
+    } else {
+
+    }
+
+
 }
 let keyFound = false;
 let aideDemande = false;
@@ -177,9 +191,7 @@ function aideStatus() {
 
 
 
-let lovebomb = new Audio("assets/lovebomb.mp3")
-lovebomb.volume = 0.6;
-lovebomb.play()
+
 
 let chapitreLog = localStorage.getItem("chapter");
 
@@ -192,3 +204,18 @@ function startGame() {
     }
 }
 startGame()
+
+let efface = document.querySelector(".effacer")
+efface.addEventListener("click", function() {
+
+
+})
+
+function reset() {
+    localStorage.clear();
+    keyStatus = false;
+    aideTrue = false;
+    aideStatus = false;
+
+}
+reset();
