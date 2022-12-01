@@ -135,9 +135,9 @@ function goToChapter(chapterName) {
     let inputOui = input.checked;
     console.log(inputOui)
     if (inputOui == true) {
-        const lovebomb = new Audio("assets/lovebomb.mp3")
-        lovebomb.currentTime = 0;
-        lovebomb.play()
+        const woo = new Audio("assets/woo.mp3")
+        woo.currentTime = 0;
+        woo.play()
     }
 
     console.log(chaptersObj[chapterName]["subtitle"]);
