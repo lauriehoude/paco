@@ -131,19 +131,23 @@ let chaptersObj = {
 function goToChapter(chapterName) {
 
     let input = document.querySelector('[type="checkbox"]');
-    console.log(input)
+
     let inputOui = input.checked;
-    console.log(inputOui)
+
     if (inputOui == true) {
         const woo = new Audio("assets/woo.mp3")
         woo.currentTime = 0;
         woo.play()
     }
+    let body = document.querySelector("body");
+    body.setAttribute("class", [chapterName]);
+
 
     console.log(chaptersObj[chapterName]["subtitle"]);
     console.log(chaptersObj[chapterName]["text"]);
     console.log(chaptersObj[chapterName]["image"]);
     console.log(chaptersObj[chapterName]["videos"]);
+
 
     document.querySelector(".bouton").innerHTML = " ";
     document.querySelector(".quete").innerHTML = chaptersObj[chapterName]["subtitle"];
@@ -155,7 +159,6 @@ function goToChapter(chapterName) {
     } else {
         document.querySelector(".photos").innerHTML = `<img src="${chaptersObj[chapterName].image}">`;
     }
-
 
 
 
