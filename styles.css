@@ -89,11 +89,12 @@
             max-height: 61%;
         }
         
-        .game .introduction1 {
+        .introduction:hover .game {
             box-shadow: 10px 10px 10px 10px gray;
+            background-image: linear-gradient(#FFEFD5, lightpink);
         }
         
-        .nager img {
+        .game:hover .nager img {
             filter: brightness(110%)
         }
         
