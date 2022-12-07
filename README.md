@@ -2,6 +2,7 @@ Projet vous êtes le héro
 
 
 # À la recherche du trésor
+https://lauriehoude.github.io/paco/
 
 [ Développement web - Projet vous êtes le héros](https://smnarnold.com/projets/vous-etes-le-heros)
 
