@@ -43,6 +43,7 @@ body {
     font-family: "midnight";
     text-align: center;
     letter-spacing: 0.15em;
+    font-family: "midnight";
 }
 
 .titre {
@@ -108,10 +109,6 @@ video {
     font-family: "midnight";
 }
 
-.nager:hover .game {
-    box-shadow: 10px 10px 10px 10px gray;
-}
-
 .nager:hover button.choix {
     background-color: #D8BFD8;
     border-style: solid;
@@ -119,8 +116,24 @@ video {
     border-color: #f0f0f0;
 }
 
+.nager:hover .game {
+    background-color: palegreen;
+}
+
 .nager:hover img {
-    mix-blend-mode: multiply;
+    filter: hue-rotate(90deg);
+}
+
+.nager:hover h1 {
+    color: black;
+    text-shadow: 2px 2px white;
+    font-family: "midnight";
+}
+
+.nager:hover .quete {
+    color: black;
+    font-family: "midnight";
+    text-shadow: 2px 2px white;
 }
 
 .introduction:hover h1 {
