@@ -108,13 +108,15 @@ video {
     font-family: "midnight";
 }
 
-.game:hover .nager img {
-    filter: brightness(110%)
+.nager:hover .game {
+    box-shadow: 10px 10px 10px 10px gray;
 }
 
-.nager:hover .game {
+.nager:hover button.choix {
     background-color: #D8BFD8;
-    box-shadow: 10px 10px 10px 10px gray;
+    border-style: solid;
+    border-top-width: 2px;
+    border-color: #f0f0f0;
 }
 
 .nager:hover img {
